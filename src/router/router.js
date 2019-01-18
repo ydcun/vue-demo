@@ -16,6 +16,9 @@ export default [
 		// else
 		// 	alert("no from login")
 		next()
+	},
+	meta:{
+		title:'home_ydcun'
 	}
   },
   {
