@@ -23,7 +23,7 @@ export default {
   methods: {
 	  handleClick (type) {
 		  if(type === 'back') 
-		  	his.$router.go(-1)
+		  	this.$router.go(-1)
 		  else if (type === 'push')
 		  	this.$router.push('/parent')
 		  else if (type === 'push2')
