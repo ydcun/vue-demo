@@ -5,12 +5,28 @@
       <router-link :to="{ name: 'about' }">About</router-link>|
       <router-link to="/ydcun/1">ydcun</router-link>
     </div>
-	<transition-group name="router">
+	<transition-group :name="routerTranstionName">
 		<router-view key="default"/>
 		<router-view key="tel" name="tel"/>
 	</transition-group>
   </div>
 </template>
+<script>
+export default {
+	data () {
+		return {
+			routerTranstionName: ''
+		}
+	},
+	watch: {
+		'$route' (to){
+			console.log(to)
+			to.query && to.query.transitionName && (this.routerTranstionName = to.query.transitionName)
+		}
+	}
+}
+</script>
+
 
 <style lang="less">
 
@@ -18,7 +34,7 @@
 	opacity: 0;
 }
 .router-enter-active{
-	transition: opacity 1s ease;
+	transition: opacity 5s ease;
 }
 .router-enter-to{
 	opacity: 1;
