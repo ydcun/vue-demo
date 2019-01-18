@@ -38,5 +38,9 @@ export default [
 		  default: () => import('@/views/child.vue'),
 		  tel: () => import('@/views/tel.vue')
 	  }
+  },
+  {
+	  path: '/main',
+	  redirect: '/'
   }
 ]
