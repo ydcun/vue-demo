@@ -42,5 +42,28 @@ export default [
   {
 	  path: '/main',
 	  redirect: '/'
+  },
+  {
+	  path: '/main2',
+	  redirect: {
+		  name: 'home'
+	  }
+  },
+  {
+	  path: '/main3',
+	  //返回路由的name
+	  redirect: to => {
+		  console.log(to)
+		  return {
+			  name: 'home'
+		  }
+	  }
+  },
+  {
+	  path: '/main4',
+	  //直接返回路径
+	  redirect: to => {
+		  return '/'
+	  }
   }
 ]
