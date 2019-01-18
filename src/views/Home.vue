@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+	  <b>{{food}}</b>
 	<button @click="handleClick('back')">返回上一页</button>
 	<button @click="handleClick('push')">跳转</button>
 	<button @click="handleClick('push2')">跳转2</button>
@@ -39,6 +40,12 @@ export default {
 					name: 'yyyy'
 				}
 			})
+	  }
+  },
+  props: {
+	  food: {
+		  type: String,
+		  default: "apple"
 	  }
   }
 }

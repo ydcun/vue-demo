@@ -5,7 +5,10 @@ export default [
 	path: '/',
 	alias: '/home-page',
     name: 'home',
-    component: Home
+	component: Home,
+	props: route => ({
+		food: route.query.food
+	})
   },
   {
     path: '/about',
@@ -13,7 +16,10 @@ export default [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+	component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue'),
+	props: {
+		food: "banna"
+	}
   },
   {
 	path: '/ydcun/:name',
@@ -68,5 +74,10 @@ export default [
 	  redirect: to => {
 		  return '/'
 	  }
+  },
+  {
+	  path: '/ydcun2/:name',
+	  component: () => import('@/views/ydcun1.vue'),
+	  props: true
   }
 ]
