@@ -8,7 +8,15 @@ export default [
 	component: Home,
 	props: route => ({
 		food: route.query.food
-	})
+	}),
+	//路由独享守卫
+	beforeEnter: (to, from, next) => {
+		// if(from.name==='login')
+		// 	alert("from login")
+		// else
+		// 	alert("no from login")
+		next()
+	}
   },
   {
     path: '/about',
@@ -79,6 +87,11 @@ export default [
 	  path: '/ydcun2/:name',
 	  component: () => import('@/views/ydcun1.vue'),
 	  props: true
+  },
+  {
+	  path: '/login',
+	  name: 'login',
+	  component: () => import('@/views/login.vue')
   },
   {
 	  path: '*',
