@@ -6,6 +6,7 @@
       <router-link to="/ydcun">ydcun</router-link>
     </div>
     <router-view/>
+	<router-view name="tel"/>
   </div>
 </template>
 

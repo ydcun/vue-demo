@@ -33,6 +33,10 @@ export default [
 	  component: () => import('@/views/child.vue')
   },
   {
-	  
+	  path: '/name_view',
+	  components: {
+		  default: () => import('@/views/child.vue'),
+		  tel: () => import('@/views/tel.vue')
+	  }
   }
 ]
