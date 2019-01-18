@@ -1,5 +1,10 @@
 <template>
   <div class="home">
+	<button @click="handleClick('back')">返回上一页</button>
+	<button @click="handleClick('push')">跳转</button>
+	<button @click="handleClick('push2')">跳转2</button>
+	<button @click="handleClick('replace')">替换到parent</button>
+	<br/>
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -13,6 +18,25 @@ export default {
   name: 'home',
   components: {
     HelloWorld
+  },
+  methods: {
+	  handleClick (type) {
+		  if(type === 'back') 
+		  	his.$router.go(-1)
+		  else if (type === 'push')
+		  	this.$router.push('/parent')
+		  else if (type === 'push2')
+		  	this.$router.push({
+				  name: 'parent'
+			  })
+		  else if (type === 'replace')
+			this.$router.replace({
+				name: 'parent',
+				query: {
+					name: 'ydcun'
+				}
+			})
+	  }
   }
 }
 </script>
