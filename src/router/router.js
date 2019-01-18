@@ -17,5 +17,19 @@ export default [
   {
     path: '/ydcun/:name',
     component: () => import('@/views/ydcun.vue')
+  },
+  {
+	  path: '/parent',
+	  component: () => import('@/views/parent.vue'),
+	  children: [
+		  {
+			  path: 'child',
+			  component: () => import('@/views/child.vue')
+		  }
+	  ]
+  },
+  {
+	  path: '/child',
+	  component: () => import('@/views/child.vue')
   }
 ]
