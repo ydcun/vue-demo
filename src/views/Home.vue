@@ -31,9 +31,12 @@ export default {
 			  })
 		  else if (type === 'replace')
 			this.$router.replace({
-				name: 'parent',
+				name: 'ydcun',
 				query: {
 					name: 'ydcun'
+				},
+				params: {
+					name: 'yyyy'
 				}
 			})
 	  }

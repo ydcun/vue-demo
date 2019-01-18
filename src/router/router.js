@@ -16,7 +16,8 @@ export default [
     component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
   },
   {
-    path: '/ydcun/:name',
+	path: '/ydcun/:name',
+	name: 'ydcun',
     component: () => import('@/views/ydcun.vue')
   },
   {
