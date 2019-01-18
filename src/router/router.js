@@ -79,5 +79,9 @@ export default [
 	  path: '/ydcun2/:name',
 	  component: () => import('@/views/ydcun1.vue'),
 	  props: true
+  },
+  {
+	  path: '*',
+	  component: () => import('@/views/error_404.vue')
   }
 ]
