@@ -84,7 +84,8 @@ export default [
 	  }
   },
   {
-	  path: '/ydcun2/:name',
+	  path: '/ydcun1/:name',
+	  name: 'ydcun1',
 	  component: () => import('@/views/ydcun1.vue'),
 	  props: true
   },

@@ -47,6 +47,22 @@ export default {
 		  type: String,
 		  default: "apple"
 	  }
+  },
+  //页面前置守卫,渲染前
+  beforeRouteEnter (to, from, next) {
+	  console.log(to.name)
+	  next(vue=>{
+		  //当前页面的vue组件
+		  console.log(vue)
+	  })
+  },
+  //页面离开时候调用
+  beforeRouteLeave (to, from, next) {
+	  var ok = confirm("确认要离开吗")
+	  if(ok)
+		  next()
+	  else
+	  	  next(false)
   }
 }
 </script>

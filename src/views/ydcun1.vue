@@ -13,6 +13,10 @@ export default {
 		  type: String,
 		  default: 'hi'
 	  }
+  },
+  //复用守卫
+  beforeRouteUpdate(to,from,next){
+	  console.log(to,from)
   }
 }
 </script>
