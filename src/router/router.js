@@ -31,5 +31,8 @@ export default [
   {
 	  path: '/child',
 	  component: () => import('@/views/child.vue')
+  },
+  {
+	  
   }
 ]
