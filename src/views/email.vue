@@ -13,9 +13,9 @@
 
 
 <script>
-// import { mapState } from 'vuex'
+import { mapState,mapGetters } from 'vuex'
 import { createNamespacedHelpers } from 'vuex'
-const { mapState } = createNamespacedHelpers('user')
+// const { mapState } = createNamespacedHelpers('user')
 
 export default {
 	methods: {
@@ -30,6 +30,7 @@ export default {
 		userName () {
 			return this.$store.state.user.userName
 		},
+		
 		// ...mapState({
 		// 	appName2: state => {
 		// 		return state.appName
@@ -38,9 +39,13 @@ export default {
 		...mapState({
 			userName2: state => state.userName
 		}),
-		appNameWithVersion(){
-			return this.$store.getters.appNameWithVersion
-		}
+
+		// appNameWithVersion(){
+		// 	return this.$store.getters.appNameWithVersion
+		// }
+		...mapGetters([
+			'appNameWithVersion'
+		])
 	},
 	mounted() {
 		console.log(this.$bus)
