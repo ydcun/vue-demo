@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<a-input v-model="inputValue"></a-input>
-		<p>{{ inputValue }}</p>
+		<p>{{ inputValue }} -> lastLetter is {{inputValueLastLetter}} </p>
 		<a-input @input="handleInput" :value="inputValue"/>
 		<a-show :showValue="inputValue">ShowValue:</a-show>
 	</div>
@@ -26,6 +26,11 @@ export default {
 	methods: {
 		handleInput (val){
 			this.inputValue=val
+		}
+	},
+	computed: {
+		inputValueLastLetter(){
+			return this.inputValue.substr(-1,1)
 		}
 	},		
 }
