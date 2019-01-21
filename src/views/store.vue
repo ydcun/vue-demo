@@ -2,6 +2,7 @@
 	<div>
 		<a-input v-model="inputValue"></a-input>
 		<p>{{ inputValue }}</p>
+		<a-input @input="handleInput" :value="inputValue"/>
 	</div>
 </template>
 
@@ -18,6 +19,11 @@ export default {
 	},
 	components:{
 		AInput
-	}
+	},
+	methods: {
+		handleInput (val){
+			this.inputValue=val
+		}
+	},		
 }
 </script>
