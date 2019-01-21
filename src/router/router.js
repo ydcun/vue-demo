@@ -56,7 +56,8 @@ export default [
 	  path: '/name_view',
 	  components: {
 		  default: () => import('@/views/child.vue'),
-		  tel: () => import('@/views/tel.vue')
+		  tel: () => import('@/views/tel.vue'),
+		  email: () => import('@/views/email.vue')
 	  }
   },
   {

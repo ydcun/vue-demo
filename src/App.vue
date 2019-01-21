@@ -8,6 +8,7 @@
 	<transition-group :name="routerTranstionName">
 		<router-view key="default"/>
 		<router-view key="tel" name="tel"/>
+		<router-view key="email" name="email"/>
 	</transition-group>
   </div>
 </template>
