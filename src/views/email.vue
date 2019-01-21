@@ -3,11 +3,11 @@
 		ddddddd
 		<p><button @click="handleClick">点我</button></p>
 		<p>{{ appName }}</p>
-		<p>userName:{{ userName }}</p>
+		<p>userName:{{ userName }} appNameWithVersion:{{appNameWithVersion}}</p>
 
 
 		<!-- <p>{{ appName2 }}</p> -->
-		<p>{{ userName2 }} appNameWithVersion:{{appNameWithVersion}}</p>
+		<p>{{ userName2 }} firstLetter {{firstLetter}}</p>
 	</div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
 		userName () {
 			return this.$store.state.user.userName
 		},
-		
+
 		// ...mapState({
 		// 	appName2: state => {
 		// 		return state.appName
@@ -45,7 +45,12 @@ export default {
 		// }
 		...mapGetters([
 			'appNameWithVersion'
+		]),
+		...mapGetters('user',[
+			'firstLetter'
 		])
+
+
 	},
 	mounted() {
 		console.log(this.$bus)
