@@ -2,6 +2,7 @@
 	<div>
 		ddddddd
 		<p><button @click="handleClick">点我</button></p>
+		<p>{{ appName }}</p>
 	</div>
 </template>
 
@@ -10,6 +11,11 @@ export default {
 	methods: {
 		handleClick (){
 			this.$bus.$emit('on-click', 'hello')
+		}
+	},
+	computed: {
+		appName () {
+			return this.$store.state.appName
 		}
 	},
 	mounted() {
