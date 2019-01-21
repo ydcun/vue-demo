@@ -7,7 +7,7 @@
 
 
 		<!-- <p>{{ appName2 }}</p> -->
-		<p>{{ userName2 }}</p>
+		<p>{{ userName2 }} appNameWithVersion:{{appNameWithVersion}}</p>
 	</div>
 </template>
 
@@ -37,8 +37,10 @@ export default {
 		// }),
 		...mapState({
 			userName2: state => state.userName
-		})
-
+		}),
+		appNameWithVersion(){
+			return this.$store.getters.appNameWithVersion
+		}
 	},
 	mounted() {
 		console.log(this.$bus)
