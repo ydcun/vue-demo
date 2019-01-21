@@ -4,10 +4,16 @@
 		<p><button @click="handleClick">点我</button></p>
 		<p>{{ appName }}</p>
 		<p>userName:{{ userName }}</p>
+
+
+		<p>{{ appName2 }}</p>
 	</div>
 </template>
 
-<<script>
+
+<script>
+import { mapState } from 'vuex'
+
 export default {
 	methods: {
 		handleClick (){
@@ -20,7 +26,12 @@ export default {
 		},
 		userName () {
 			return this.$store.state.user.userName
-		}
+		},
+		...mapState({
+			appName2: state => {
+				return state.appName
+			}
+		})
 
 	},
 	mounted() {
