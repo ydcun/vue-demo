@@ -6,13 +6,16 @@
 		<p>userName:{{ userName }}</p>
 
 
-		<p>{{ appName2 }}</p>
+		<!-- <p>{{ appName2 }}</p> -->
+		<p>{{ userName2 }}</p>
 	</div>
 </template>
 
 
 <script>
-import { mapState } from 'vuex'
+// import { mapState } from 'vuex'
+import { createNamespacedHelpers } from 'vuex'
+const { mapState } = createNamespacedHelpers('user')
 
 export default {
 	methods: {
@@ -27,10 +30,13 @@ export default {
 		userName () {
 			return this.$store.state.user.userName
 		},
+		// ...mapState({
+		// 	appName2: state => {
+		// 		return state.appName
+		// 	}
+		// }),
 		...mapState({
-			appName2: state => {
-				return state.appName
-			}
+			userName2: state => state.userName
 		})
 
 	},
